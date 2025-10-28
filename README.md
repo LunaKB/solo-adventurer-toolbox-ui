@@ -1,5 +1,7 @@
 # SoloAdventurerToolboxUi
 
+The Solo Adventurer Toolbox UI project is the front-end for the Solo Adventurer Toolbox fullstack project, which allows the user to play Dungeons and Dragons by themselves, with the assistance of tables to randomly generate NPCs, dungeons, enemies, shops, and more.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
 
 ## Development server
