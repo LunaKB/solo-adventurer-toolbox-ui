@@ -1,0 +1,12 @@
+<h1>Generate Story Elements</h1>
+<div>
+    <label class="form-label" for="element-number">Number of Elements to Generate</label>
+    <input [(ngModel)]="amount" type="number" id="element-number" class="form-control" />
+</div>
+<button type="button" class="btn btn-primary" (click)="getStoryElements()">Generate</button>
+
+@for (element of elements(); track $index) {
+    <p>{{element[0]}}: {{element[1]}}</p>
+} @empty {
+    <p>There are no elements.</p>
+}
