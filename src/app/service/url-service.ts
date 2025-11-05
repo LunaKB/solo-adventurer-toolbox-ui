@@ -11,49 +11,64 @@ const networkUrl = environment.networkServer
     providedIn: 'root'
 })
 export class UrlService {
-    private url = ""
-    private isLocal = false
-    private isExternal = false
-    private isNetwork = false
+    constructor(private _http: HttpClient) { }
 
-    constructor(private _http: HttpClient) {
-        
-    }
-
-    public getUrl(serviceName: string) : Observable<any> {
-        return this.getExternalUrl(serviceName).pipe(
-            mergeMap(() => this.getNetworkUrl(serviceName)),
-            mergeMap(() => this.getLocalUrl(serviceName)),
-            tap(val => this.setUrl(serviceName)),
-            map(() => this.url)
+    public getUrl(serviceName: string, port: string) : Observable<any> {
+        return this.getExternalUrl(serviceName, port).pipe(
+            mergeMap(val => this.getNetworkUrl(serviceName, port, val)),
+            mergeMap(val => this.getLocalUrl(serviceName, port, val)),
+            map(val => this.getResult(val))
         )
     }
 
-    private getLocalUrl(serviceName: string) : Observable<any> {
-        return this._http.get<any>(`${localUrl}${serviceName}api/`).pipe(
+    private getLocalUrl(serviceName: string, port: string, values: Array<ConnectionData>) : Observable<any> {
+        var url = `//${localUrl}${port}/${serviceName}`
+        return this._http.get<any>(`${url}api/`).pipe(
             timeout(1000),
             catchError(e => {return of(null)}),
-            tap(val => { if (val) this.isLocal = true }))
+            map(val => { 
+                values.push(new ConnectionData(url, val))
+                return values 
+            }
+        ))
     }
 
-    private getExternalUrl(serviceName: string) : Observable<any> {
-        return this._http.get<any>(`${externalUrl}${serviceName}api/`).pipe(
+    private getExternalUrl(serviceName: string, port: string) : Observable<any> {
+        var url = `//${externalUrl}${port}/${serviceName}`
+        return this._http.get<any>(`${url}api/`).pipe(
             timeout(1000),
-            catchError(e => {return of(null)}),
-            tap(val => { if (val) this.isExternal = true }))
+            catchError(e => {return of(false)}),
+            map(val => {
+                return [new ConnectionData(url, val)]
+            }
+        ))
     }
 
-    private getNetworkUrl(serviceName: string) : Observable<any> {
-        return this._http.get<any>(`${networkUrl}${serviceName}api/`).pipe(
+    private getNetworkUrl(serviceName: string, port: string, values: Array<ConnectionData>) : Observable<any> {
+        var url = `//${networkUrl}${port}/${serviceName}`
+        return this._http.get<any>(`${url}api/`).pipe(
             timeout(1000),
-            catchError(e => {return of(null)}),
-            tap(val => { if (val) this.isNetwork = true }))
+            catchError(e => {return of(false)}),
+            map(val => { 
+                values.push(new ConnectionData(url, val))
+                return values 
+            }
+        ))
     }
 
-    private setUrl(serviceName: string) {
-        if (this.isExternal) this.url = `${externalUrl}${serviceName}`
-        else if (this.isNetwork) this.url = `${networkUrl}${serviceName}`
-        else if (this.isLocal) this.url = `${localUrl}${serviceName}`
-        return this.url
+    private getResult(values: Array<ConnectionData>) : string {
+        if (values[0].connected) return values[0].url
+        else if (values[1].connected) return values[1].url
+        else if (values[2].connected) return values[2].url
+        return "error_no_valid_url"
+    }
+}    
+
+class ConnectionData {
+    url: string
+    connected: boolean
+    constructor(url: string, connected: boolean) {
+        this.url = url
+        this.connected = connected
     }
 }

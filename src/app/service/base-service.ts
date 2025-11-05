@@ -10,18 +10,14 @@ export abstract class BaseService {
     private serviceUrl = ''
 
     constructor(protected _http: HttpClient, _data: UrlService) {
-        _data.getUrl(this.getServiceName()).subscribe({
-            next: val => {
-                if (val) {
-                    console.log(val)
-                    this.serviceUrl = val
-                }
-            },
+        _data.getUrl(this.getServiceName(), this.getPort()).subscribe({
+            next: val => { if (val) this.serviceUrl = val },
             error: error => console.log(error)
         })
     }
 
     abstract getServiceName() : string
+    abstract getPort() : string
     protected getUrl() : string {
         return this.serviceUrl
     }

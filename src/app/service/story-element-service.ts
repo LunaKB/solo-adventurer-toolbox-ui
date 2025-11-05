@@ -9,6 +9,10 @@ export class StoryElementService extends BaseService {
     override getServiceName(): string {
         return 'story-element/'
     }
+
+    override getPort(): string {
+        return "8100"
+    }
     
     public getElements(amount: number) : Observable<any> {
         return this._http.get(`${this.getUrl()}generate/${amount}`, {'headers': this.headers})

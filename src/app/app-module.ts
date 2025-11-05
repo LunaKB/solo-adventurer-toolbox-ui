@@ -7,11 +7,13 @@ import { StoryElementComponent } from './story-element/story-element';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { APP_BASE_HREF } from '@angular/common';
+import { WildernessGenerationComponent } from './wilderness-generation/wilderness-generation';
 
 @NgModule({
   declarations: [
     App,
-    StoryElementComponent
+    StoryElementComponent,
+    WildernessGenerationComponent
   ],
   imports: [
     BrowserModule,
