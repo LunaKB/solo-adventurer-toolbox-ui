@@ -151,6 +151,13 @@ export class WildernessGenerationComponent {
     })
   }
   
+  protected getStructure() {
+    this._service.getStructure().subscribe({
+      next: val => this.setMinorTerrain(val), 
+      error: error => console.log(error)
+    })
+  }
+  
   protected getMinorSwamp() {
     this._service.getMinorSwamp().subscribe({
       next: val => this.setMinorTerrain(val), 

@@ -92,6 +92,10 @@ export class WildernessGenerationService extends BaseService {
         return this._http.get(`${this.getUrl()}minor/generate/settlement`, {headers: this.headers})
     }
     
+    public getStructure() : Observable<any> {
+        return this._http.get(`${this.getUrl()}minor/generate/structure`, {headers: this.headers})
+    }
+    
     public getMinorSwamp() : Observable<any> {
         return this._http.get(`${this.getUrl()}minor/generate/swamp`, {headers: this.headers})
     }
