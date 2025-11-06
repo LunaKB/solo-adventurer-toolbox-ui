@@ -1,0 +1,46 @@
+<h1>Generate Wilderness</h1>
+<h2>Overarching Terrain</h2>
+<button type="button" class="btn btn-primary" (click)="getArctic()">Generate Arctic</button>
+<button type="button" class="btn btn-primary" (click)="getCoastal()">Generate Coastal</button>
+<button type="button" class="btn btn-primary" (click)="getDesert()">Generate Desert</button>
+<button type="button" class="btn btn-primary" (click)="getForest()">Generate Forest</button>
+<button type="button" class="btn btn-primary" (click)="getSwamp()">Generate Swamp</button>
+<button type="button" class="btn btn-primary" (click)="getMountain()">Generate Mountain</button>
+<button type="button" class="btn btn-primary" (click)="getHill()">Generate Hill</button>
+<button type="button" class="btn btn-primary" (click)="getGrassland()">Generate Grassland</button>
+
+<p>{{overarchingTerrain()}}</p>
+
+<br><br>
+
+<h2>Minor Terrain</h2>
+<button type="button" class="btn btn-primary" (click)="getClearfelledArea()">Generate Clearfelled Area</button>
+<button type="button" class="btn btn-primary" (click)="getClearing()">Generate Clearing</button>
+<button type="button" class="btn btn-primary" (click)="getGully()">Generate Gully</button>
+<button type="button" class="btn btn-primary" (click)="getMinorHill()">Generate Hill</button>
+<button type="button" class="btn btn-primary" (click)="getLake()">Generate Lake</button>
+<button type="button" class="btn btn-primary" (click)="getLandscape()">Generate Landscape Feature</button>
+<button type="button" class="btn btn-primary" (click)="getMonument()">Generate Monument</button>
+<button type="button" class="btn btn-primary" (click)="getMinorMountain()">Generate Mountain</button>
+<button type="button" class="btn btn-primary" (click)="getOasis()">Generate Oasis</button>
+<button type="button" class="btn btn-primary" (click)="getOutcrop()">Generate Rocky Outcrop</button>
+<button type="button" class="btn btn-primary" (click)="getSettlement()">Generate Settlement</button>
+<button type="button" class="btn btn-primary" (click)="getStructure()">Generate Structure</button>
+<button type="button" class="btn btn-primary" (click)="getMinorSwamp()">Generate Swamp</button>
+<button type="button" class="btn btn-primary" (click)="getWaterway()">Generate Waterway</button>
+<button type="button" class="btn btn-primary" (click)="getWood()">Generate Woods</button>
+
+<p>{{minorTerrainDescription()}}</p>
+<p>{{minorTerrainNotes()}}</p>
+
+<br><br>
+
+<h2>Discovery</h2>
+<button type="button" class="btn btn-primary" (click)="getDiscovery()">Generate Discovery</button>
+
+<p>{{discovery()}}</p>
+
+<h2>Clue</h2>
+<button type="button" class="btn btn-primary" (click)="getClue()">Generate Clue</button>
+
+<p>{{clue()}}</p>
