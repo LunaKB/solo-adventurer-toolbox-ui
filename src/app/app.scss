@@ -6,13 +6,3 @@
 #nav-column {
     flex-direction: column;
 }
-
-li {
-    button {
-        background-color: var(--primary);
-        color: var(--text);
-        &:hover {
-            background-color: var(--primary-light);
-        }
-    }
-}

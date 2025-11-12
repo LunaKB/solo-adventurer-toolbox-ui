@@ -6,16 +6,17 @@
         <nav id="nav-column" class="nav nav-pills">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <button type="button" class="btn" [routerLink]="['']"><span class="bi-house"></span> Home</button>
+              <button type="button" class="btn nav-button" [routerLink]="['']"><span class="bi-house"></span> Home</button>
             </li>
             <li class="nav-item">
-              <button  type="button" class="btn" [routerLink]="['story']"><span class="bi-book"></span> Story</button>
+              <button  type="button" class="btn nav-button" [routerLink]="['story']"><span class="bi-book"></span> Story</button>
             </li>
             <li class="nav-item">
-              <button type="button" class="btn" [routerLink]="['wilderness']"><span class="bi-tree"></span> Wilderness</button>
+              <button type="button" class="btn nav-button" [routerLink]="['wilderness']"><span class="bi-tree"></span> Wilderness</button>
             </li>
             <li>
-              <button type="button" class="btn" (click)="toggleTheme()">Toggle Theme</button>
+              <hr>
+              <app-toggle-theme />
             </li>
           </ul>
         </nav>
