@@ -4,14 +4,14 @@
     <div class="col d-flex justify-content-center">
         <div class="card w-50 border-primary">
             <div class="card-body">
-            <h3 class="card-title">Generate Story Elements</h3>
-            <br>
-            <div class="input-group">
-                <span class="input-group-text" for="element-number">Number of Elements to Generate</span>
-                <input [(ngModel)]="amount" type="number" id="element-number" class="form-control" />
-            </div>
+                <h3 class="card-title">Generate Story Elements</h3>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-text" for="element-number">Number of Elements to Generate</span>
+                    <input [(ngModel)]="amount" type="number" id="element-number" class="form-control" />
+                </div>
 
-            <button type="button" class="btn" (click)="getStoryElements()">Generate</button>
+                <button type="button" class="btn" (click)="getStoryElements()">Generate</button>
             </div>
             <br>
             <ul class="list-group list-group-flush">

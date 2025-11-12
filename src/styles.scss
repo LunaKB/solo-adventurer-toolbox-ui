@@ -35,6 +35,8 @@ $dark-error: #e47474;
 
   --primary: #{$light-primary};
   --primary-light: #{$light-primary-light};
+  --nav-bar: #{$light-primary-light};
+  --nav-bar-hover: #{$light-primary};
   --accent: #{$light-accent};
   --accent-hover: #{$light-accent-hover};
   --accent-text: #{$light-accent-text};
@@ -51,6 +53,8 @@ $dark-error: #e47474;
 
   --primary: #{$dark-primary};
   --primary-light: #{$dark-primary-light};
+  --nav-bar: #{$dark-primary};
+  --nav-bar-hover: #{$dark-primary-light};
   --accent: #{$dark-accent};
   --accent-hover: #{$dark-accent-hover};
   --accent-text: #{$dark-accent-text};
@@ -98,7 +102,7 @@ h1, h6 {
     }
 
     .input-group {
-        .form-control, .input-group-text {
+        .form-control, .form-select, .input-group-text {
             background-color: var(--surface) !important;     
             color: var(--text) !important;   
         }
@@ -106,9 +110,9 @@ h1, h6 {
 }
 
 .nav-button {
-    background-color: var(--primary) !important;
+    background-color: var(--nav-bar) !important;
     color: var(--text) !important;
     &:hover {
-        background-color: var(--primary-light) !important;
+        background-color: var(--nav-bar-hover) !important;
     }
 }

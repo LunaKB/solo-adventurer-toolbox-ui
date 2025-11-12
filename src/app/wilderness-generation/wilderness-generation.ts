@@ -8,171 +8,256 @@ import { WildernessGenerationService } from '../service/wilderness-generation-se
   styleUrl: './wilderness-generation.scss',
 })
 export class WildernessGenerationComponent {
-  protected overarchingTerrain = signal("")
-  protected minorTerrainDescription = signal("")
-  protected minorTerrainNotes = signal("")
-  protected discovery = signal("")
-  protected clue = signal("")
+  protected selectedOverarchingTerrain = 'Arctic'
+  protected overarchingTerrainLabel = signal('')
+  protected overarchingTerrainDescription = signal('')
+
+  protected selectedMinorTerrain = 'Clearfelled Area'
+  protected minorTerrainLabel = signal('')
+  protected minorTerrainDescription = signal('')
+  protected minorTerrainNotes = signal('')
+
+  protected discovery = signal('')
+  protected clue = signal('')
 
   constructor(private _service: WildernessGenerationService) { }
 
+  protected generateOverarchingTerrain() {
+    switch (this.selectedOverarchingTerrain) {
+      case 'Arctic':
+        this.getArctic()
+        break
+      case 'Coastal':
+        this.getCoastal()
+        break
+      case 'Desert':
+        this.getDesert()
+        break
+      case 'Forest':
+        this.getForest()
+        break
+      case 'Grassland':
+        this.getGrassland()
+        break
+      case 'Hill':
+        this.getHill()
+        break
+      case 'Mountain':
+        this.getMountain()
+        break
+      case 'Swamp':
+        this.getSwamp()
+        break
+    }
+  }
+
+  protected generateMinorTerrain() {
+    switch (this.selectedMinorTerrain) {
+      case 'Clearfelled Area':
+        this.getClearfelledArea()
+        break
+      case 'Clearing':
+        this.getClearing()
+        break
+      case 'Gully':
+        this.getGully()
+        break
+      case 'Hill':
+        this.getMinorHill()
+        break
+      case 'Lake':
+        this.getLake()
+        break
+      case 'Landscape Feature':
+        this.getLandscape()
+        break
+      case 'Monument':
+        this.getMonument()
+        break
+      case 'Mountain':
+        this.getMinorMountain()
+        break
+      case 'Oasis':
+        this.getOasis()
+        break
+      case 'Rocky Outcrop':
+        this.getOutcrop()
+        break
+      case 'Settlement':
+        this.getSettlement()
+        break
+      case 'Structure':
+        this.getStructure()
+        break
+      case 'Swamp':
+        this.getMinorSwamp()
+        break
+      case 'Waterway':
+        this.getWaterway()
+        break
+      case 'Woods':
+        this.getWood()
+        break
+    }
+  }
+
   // Overarching Terrain
-  protected getArctic() {
+  private getArctic() {
     this._service.getArctic().subscribe({
       next: val => this.setOverarchingTerrain(val),
       error: error => console.log(error)
     })
   }
 
-  protected getCoastal() {
+  private getCoastal() {
     this._service.getCoastal().subscribe({
       next: val => this.setOverarchingTerrain(val),
       error: error => console.log(error)      
     })
   }
 
-  protected getDesert() {
+  private getDesert() {
     this._service.getDesert().subscribe({
       next: val => this.setOverarchingTerrain(val),
       error: error => console.log(error)          
     })
   }
 
-  protected getForest() {
+  private getForest() {
     this._service.getForest().subscribe({
       next: val => this.setOverarchingTerrain(val),
       error: error => console.log(error)    
     })
   }
 
-  protected getSwamp() {
-    this._service.getSwamp().subscribe({
-      next: val => this.setOverarchingTerrain(val),
-      error: error => console.log(error)    
-    })
-  }
-
-  protected getMountain() {
-    this._service.getMountain().subscribe({
-      next: val => this.setOverarchingTerrain(val),
-      error: error => console.log(error)
-    })
-  }
-
-  protected getHill() {
-    this._service.getHill().subscribe({
-      next: val => this.setOverarchingTerrain(val),
-      error: error => console.log(error)    
-    })
-  }
-
-  protected getGrassland() {
+  private getGrassland() {
     this._service.getGrassland().subscribe({
       next: val => this.setOverarchingTerrain(val),
       error: error => console.log(error)    
     })
   }
 
+  private getHill() {
+    this._service.getHill().subscribe({
+      next: val => this.setOverarchingTerrain(val),
+      error: error => console.log(error)    
+    })
+  }
+
+  private getMountain() {
+    this._service.getMountain().subscribe({
+      next: val => this.setOverarchingTerrain(val),
+      error: error => console.log(error)
+    })
+  }
+
+  private getSwamp() {
+    this._service.getSwamp().subscribe({
+      next: val => this.setOverarchingTerrain(val),
+      error: error => console.log(error)    
+    })
+  }
+
   // Minor Terrain
-  protected getClearfelledArea() {
+  private getClearfelledArea() {
     this._service.getClearfelledArea().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getClearing() {
+  private getClearing() {
     this._service.getClearing().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getGully() {
+  private getGully() {
     this._service.getGully().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getMinorHill() {
+  private getMinorHill() {
     this._service.getMinorHill().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getLake() {
+  private getLake() {
     this._service.getLake().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getLandscape() {
+  private getLandscape() {
     this._service.getLandscape().subscribe({
       next: val => this.setMinorTerrain([val, '']), 
       error: error => console.log(error)
     })
   }
   
-  protected getMonument() {
+  private getMonument() {
     this._service.getMonument().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getMinorMountain() {
+  private getMinorMountain() {
     this._service.getMinorMountain().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getOasis() {
+  private getOasis() {
     this._service.getOasis().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getOutcrop() {
+  private getOutcrop() {
     this._service.getOutcrop().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getSettlement() {
+  private getSettlement() {
     this._service.getSettlement().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getStructure() {
+  private getStructure() {
     this._service.getStructure().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getMinorSwamp() {
+  private getMinorSwamp() {
     this._service.getMinorSwamp().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getWaterway() {
+  private getWaterway() {
     this._service.getWaterway().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
     })
   }
   
-  protected getWood() {
+  private getWood() {
     this._service.getWood().subscribe({
       next: val => this.setMinorTerrain(val), 
       error: error => console.log(error)
@@ -196,10 +281,12 @@ export class WildernessGenerationComponent {
 
   // Setters
   private setOverarchingTerrain(val: any) {
-    this.overarchingTerrain.set(val)
+    this.overarchingTerrainLabel.set(this.selectedOverarchingTerrain)
+    this.overarchingTerrainDescription.set(val)
   }
 
   private setMinorTerrain(val : any) {
+    this.minorTerrainLabel.set(this.selectedMinorTerrain)
     this.minorTerrainDescription.set(val[0])
     this.minorTerrainNotes.set(val[1])
   }
