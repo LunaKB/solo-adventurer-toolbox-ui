@@ -1,7 +1,30 @@
+<header class="info-mobile">
+  <nav class="nav navbar-expand-lg nav-pills">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
+      <span id="nav-icon" class="bi bi-list"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <button type="button" class="btn nav-button" [routerLink]="['']"><span class="bi-house"></span> Home</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn nav-button" [routerLink]="['story']"><span class="bi-book"></span> Story</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn nav-button" [routerLink]="['wilderness']"><span class="bi-tree"></span> Wilderness</button>
+        </li>
+        <li>
+          <hr>
+          <app-toggle-theme />
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 <div class="container-fluid">
   <div class="row">
-
-    <div id="div-column" class="col-auto position-sticky">
+    <div id="div-column" class="col-auto position-sticky info-desktop">
       <header>
         <nav id="nav-column" class="nav nav-pills">
           <ul class="navbar-nav">
@@ -23,7 +46,7 @@
       </header>
 
       <footer class="fixed-bottom">
-        <p>🌕 2025 Luna KB</p>
+        <h6>🌕 2025 Luna KB</h6>
       </footer>
     </div>
 
@@ -32,3 +55,6 @@
     </div>
   </div>
 </div>
+<footer class="info-mobile fixed-bottom">
+  <h6>🌕 2025 Luna KB</h6>
+</footer>

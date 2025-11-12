@@ -101,7 +101,7 @@ h1, h6 {
         border-color: var(--border) !important;
     }
 
-    .input-group {
+    .input-group, .form-group {
         .form-control, .form-select, .input-group-text {
             background-color: var(--surface) !important;     
             color: var(--text) !important;   
@@ -114,5 +114,17 @@ h1, h6 {
     color: var(--text) !important;
     &:hover {
         background-color: var(--nav-bar-hover) !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .info-desktop {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .info-mobile {
+        display: none !important;
     }
 }

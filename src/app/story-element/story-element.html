@@ -1,3 +1,4 @@
+<br>
 <h1>Story Elements</h1>
 <br>
 <div class="row">
@@ -6,9 +7,13 @@
             <div class="card-body">
                 <h3 class="card-title">Generate Story Elements</h3>
                 <br>
-                <div class="input-group">
+                <div class="input-group info-desktop">
                     <span class="input-group-text" for="element-number">Number of Elements to Generate</span>
                     <input [(ngModel)]="amount" type="number" id="element-number" class="form-control" />
+                </div>
+                <div class="form-group info-mobile">
+                    <label for="element-number-mobile">Number of Elements to Generate</label>
+                    <input [(ngModel)]="amount" type="number" id="element-number-mobile" class="form-control" />
                 </div>
 
                 <button type="button" class="btn" (click)="getStoryElements()">Generate</button>

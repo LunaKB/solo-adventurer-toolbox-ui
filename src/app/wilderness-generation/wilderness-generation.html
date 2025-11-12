@@ -1,3 +1,4 @@
+<br>
 <h1>Wilderness</h1>
 <br>
 <div class="row">
@@ -6,9 +7,22 @@
             <div class="card-body">
                 <h3 class="card-title">Overarching Terrain</h3>
                 <br>
-                <div class="input-group">
+                <div class="input-group info-desktop">
                     <span class="input-group-text" for="overarching">Select Terrain</span>
                     <select id="overarching" class="form-select" [(ngModel)]="selectedOverarchingTerrain">
+                        <option>Arctic</option>
+                        <option>Coastal</option>
+                        <option>Desert</option>
+                        <option>Forest</option>
+                        <option>Grassland</option>
+                        <option>Hill</option>
+                        <option>Mountain</option>
+                        <option>Swamp</option>
+                    </select>
+                </div>
+                <div class="form-group info-mobile">
+                    <label for="overarching-mobile">Select Terrain</label>
+                    <select id="overarching-mobile" class="form-select" [(ngModel)]="selectedOverarchingTerrain">
                         <option>Arctic</option>
                         <option>Coastal</option>
                         <option>Desert</option>
@@ -39,9 +53,29 @@
             <div class="card-body">
                 <h3 class="card-title">Minor Terrain</h3>
                 <br>
-                <div class="input-group">
+                <div class="input-group info-desktop">
                     <span class="input-group-text" for="minor">Select Terrain</span>
                     <select id="minor" class="form-select" [(ngModel)]="selectedMinorTerrain">
+                        <option>Clearfelled Area</option>
+                        <option>Clearing</option>
+                        <option>Gully</option>
+                        <option>Hill</option>
+                        <option>Lake</option>
+                        <option>Landscape Feature</option>
+                        <option>Monument</option>
+                        <option>Mountain</option>
+                        <option>Oasis</option>
+                        <option>Rocky Outcrop</option>
+                        <option>Settlement</option>
+                        <option>Structure</option>
+                        <option>Swamp</option>
+                        <option>Waterway</option>
+                        <option>Woods</option>
+                    </select>
+                </div>
+                <div class="form-group info-mobile">
+                    <label for="minor-mobile">Select Terrain</label>
+                    <select id="minor-mobile" class="form-select" [(ngModel)]="selectedMinorTerrain">
                         <option>Clearfelled Area</option>
                         <option>Clearing</option>
                         <option>Gully</option>
