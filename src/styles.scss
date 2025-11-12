@@ -69,6 +69,42 @@ h1, h6 {
     text-align: center !important;
 }
 
+.card {
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+    text-align: center;
+
+    i {
+        font-size: 200px;
+    }
+
+    button {
+        width: 100% !important;
+        background-color: var(--accent);
+        color: var(--accent-text) !important;
+        &:hover {
+            background-color: var(--accent-hover);
+        }
+    }
+
+    li {
+        background-color: var(--surface) !important;   
+        color: var(--text) !important;   
+        text-align: start;
+    }
+
+    &.border-primary {
+        border-color: var(--border) !important;
+    }
+
+    .input-group {
+        .form-control, .input-group-text {
+            background-color: var(--surface) !important;     
+            color: var(--text) !important;   
+        }
+    }
+}
+
 .nav-button {
     background-color: var(--primary) !important;
     color: var(--text) !important;

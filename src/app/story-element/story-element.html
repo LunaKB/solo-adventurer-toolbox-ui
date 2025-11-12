@@ -1,12 +1,27 @@
-<h1>Generate Story Elements</h1>
-<div>
-    <label class="form-label" for="element-number">Number of Elements to Generate</label>
-    <input [(ngModel)]="amount" type="number" id="element-number" class="form-control" />
-</div>
-<button type="button" class="btn btn-primary" (click)="getStoryElements()">Generate</button>
+<h1>Story Elements</h1>
+<br>
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <div class="card w-50 border-primary">
+            <div class="card-body">
+            <h3 class="card-title">Generate Story Elements</h3>
+            <br>
+            <div class="input-group">
+                <span class="input-group-text" for="element-number">Number of Elements to Generate</span>
+                <input [(ngModel)]="amount" type="number" id="element-number" class="form-control" />
+            </div>
 
-@for (element of elements(); track $index) {
-    <p>{{element[0]}}: {{element[1]}}</p>
-} @empty {
-    <p>There are no elements.</p>
-}
+            <button type="button" class="btn" (click)="getStoryElements()">Generate</button>
+            </div>
+            <br>
+            <ul class="list-group list-group-flush">
+                @for (element of elements(); track $index) {
+                    <li class="list-group-item">{{element[0]}}: {{element[1]}}</li>
+                } @empty {
+                    <li class="list-group-item">There are no elements.</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
