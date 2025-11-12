@@ -1,0 +1,17 @@
+.card {
+    background-color: var(--surface);
+    color: var(--text);
+    text-align: center;
+
+    i {
+        font-size: 200px;
+    }
+
+    button {
+        background-color: var(--accent);
+        color: var(--accent-text);
+        &:hover {
+            background-color: var(--accent-hover);
+        }
+    }
+}

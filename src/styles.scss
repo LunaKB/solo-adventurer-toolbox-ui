@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+// Light Theme Colors
+$light-bg: #f9f7f3;
+$light-surface: #ffffff;
+$light-text: #1e1a16;
+$light-muted-text: #4d453d;
+$light-border: #dcd3c5;
+$light-primary: #7ea6e0;
+$light-primary-light: #9bbdea;
+$light-accent: #d4b864;
+$light-accent-hover: #e4c86b;
+$light-accent-text: #1e1a16;
+$light-success: #3b8f65;
+$light-error: #b94747;
+
+// Dark Theme Colors
+$dark-bg: #121419;
+$dark-surface: #1c1f26;
+$dark-text: #e9e6df;
+$dark-muted-text: #b3aa9c;
+$dark-border: #2b2e36;
+$dark-primary: #3b5b92;
+$dark-primary-light: #5d7fb8;
+$dark-accent: #b28b37;
+$dark-accent-hover: #c29d48;
+$dark-accent-text: #1e1a16;
+$dark-success: #59b98d;
+$dark-error: #e47474;
+
+[data-theme='light'] {
+  --bg: #{$light-bg};
+  --surface: #{$light-surface};
+  --text: #{$light-text};
+  --muted-text: #{$light-muted-text};
+  --border: #{$light-border};
+
+  --primary: #{$light-primary};
+  --primary-light: #{$light-primary-light};
+  --accent: #{$light-accent};
+  --accent-hover: #{$light-accent-hover};
+  --accent-text: #{$light-accent-text};
+  --success: #{$light-success};
+  --error: #{$light-error};
+}
+
+[data-theme='dark'] {
+  --bg: #{$dark-bg};
+  --surface: #{$dark-surface};
+  --text: #{$dark-text};
+  --muted-text: #{$dark-muted-text};
+  --border: #{$dark-border};
+
+  --primary: #{$dark-primary};
+  --primary-light: #{$dark-primary-light};
+  --accent: #{$dark-accent};
+  --accent-hover: #{$dark-accent-hover};
+  --accent-text: #{$dark-accent-text};
+  --success: #{$dark-success};
+  --error: #{$dark-error};
+}
+
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    min-height: 100vh !important;
+}
+
+h1 {
+    text-align: center !important;
+}

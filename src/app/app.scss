@@ -1,0 +1,18 @@
+#div-column {
+    background-color: var(--primary);
+    height: 100vh !important;
+}
+
+#nav-column {
+    flex-direction: column;
+}
+
+li {
+    button {
+        background-color: var(--primary);
+        color: var(--text);
+        &:hover {
+            background-color: var(--primary-light);
+        }
+    }
+}
