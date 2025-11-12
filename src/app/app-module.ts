@@ -8,12 +8,16 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { APP_BASE_HREF } from '@angular/common';
 import { WildernessGenerationComponent } from './wilderness-generation/wilderness-generation';
+import { HomeComponent } from './home/home';
+import { ToggleThemeComponent } from './toggle-theme/toggle-theme';
 
 @NgModule({
   declarations: [
     App,
     StoryElementComponent,
-    WildernessGenerationComponent
+    WildernessGenerationComponent,
+    HomeComponent,
+    ToggleThemeComponent
   ],
   imports: [
     BrowserModule,
