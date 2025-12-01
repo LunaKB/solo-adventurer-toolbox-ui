@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
     providedIn: 'root'
 })
 export abstract class BaseService {
-    protected headers = { 'Content-Type': 'application/json'}
+    protected headers = {'Content-Type': 'application/json', 'Accept': "image/png"}
     private serviceUrl = ''
 
     constructor(protected _http: HttpClient, _data: UrlService) {

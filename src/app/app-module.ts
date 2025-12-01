@@ -10,6 +10,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { WildernessGenerationComponent } from './wilderness-generation/wilderness-generation';
 import { HomeComponent } from './home/home';
 import { ToggleThemeComponent } from './toggle-theme/toggle-theme';
+import { DungeonGenerationComponent } from './dungeon-generation/dungeon-generation';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ToggleThemeComponent } from './toggle-theme/toggle-theme';
     StoryElementComponent,
     WildernessGenerationComponent,
     HomeComponent,
-    ToggleThemeComponent
+    ToggleThemeComponent,
+    DungeonGenerationComponent
   ],
   imports: [
     BrowserModule,
