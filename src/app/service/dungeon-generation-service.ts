@@ -1,11 +1,18 @@
 import { Injectable } from "@angular/core";
 import { BaseService } from "./base-service";
 import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { UrlService } from "./url-service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class DungeonGenerationService extends BaseService {
+    constructor(_http: HttpClient, _data: UrlService) {
+        super(_http, _data)
+        this.headers = {'Content-Type': 'application/json', 'Accept': "image/png"}
+    }
+
     override getServiceName(): string {
         return 'dungeon-generation/'
     }
